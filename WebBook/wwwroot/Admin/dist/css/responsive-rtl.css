@@ -1,0 +1,353 @@
+/* Extra small devices (phones, less than 768px) */
+
+
+/* Small devices (tablets, 768px and up) */
+
+
+/* Small devices (tablets, 768px and up) */
+
+
+/* Medium devices (desktops, 992px and up) */
+
+
+/* Large devices (large desktops, 1200px and up) */
+
+
+/* Extra small devices (phones, less than 768px) */
+
+@media only screen and (min-width:1440px) {}
+
+@media only screen and (max-width:1366px) {
+	.login-page:after {
+		width: 480px;
+		height: 480px;
+		z-index: -1;
+	}
+}
+
+@media only screen and (max-width: 1299px) {
+	.info-box .progress-description,
+	.info-box .info-box-text {
+		font-size: 0.7rem !important;
+	}
+	.info-box .progress-description {
+		font-size: 0.7rem !important;
+	}
+	/********/
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 1.5rem;
+	}
+	.content-header h1 {
+		font-size: 1.5rem;
+	}
+	a,
+	p,
+	button,
+	span,
+	li,
+	strong,
+	b {
+		font-size: 0.9rem;
+		line-height: 1.5rem;
+	}
+	.btn {
+		padding: .2rem .2rem;
+		font-size: 0.9rem;
+	}
+	.btn_add {
+		flex: none;
+	}
+	.progress-bar span {
+		font-size: 0.6rem;
+	}
+	.single-project .tab-content .grid_view .card .card-body .card-title {
+		font-size: 0.9rem;
+	}
+	.table td,
+	.table th {
+		vertical-align: middle;
+	}
+	table tbody tr td.project-actions {
+		align-items: center;
+		justify-content: space-between;
+	}
+	table tbody tr td.project-actions a.btn-sm {
+		padding: .4rem .4rem;
+		font-size: .7rem;
+		margin: 0px;
+	}
+}
+
+
+/* (min-width:992px) (max-width: 1199.98px) // Large devices (desktops, less than 1200px) */
+
+@media only screen and (max-width: 1199.98px) {
+	/***Login***/
+	.login-page:after {
+		width: 400px;
+		height: 400px;
+		top: 100px;
+		z-index: -1;
+	}
+	.info-box .progress-description,
+	.info-box .info-box-text {
+		font-size: 0.7rem;
+	}
+	/******Table********/
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	.table thead th {
+		vertical-align: middle;
+		font-size: 12px;
+	}
+	td,
+	th {
+		padding: 6px;
+		text-align: right;
+	}
+	.card-title {
+		font-size: 1rem;
+	}
+	.view-projct .card .card-header .card-tools button,
+	.btn_add {
+		font-size: 13px;
+		padding: 4px 8px;
+	}
+	.view-projct .card .card-header .card-tools button span {
+		font-size: 13px;
+	}
+	.table td,
+	.table th {
+		vertical-align: middle;
+	}
+	table tbody tr td.project-actions {
+		align-items: center;
+		justify-content: space-between;
+	}
+	table tbody tr td.project-actions a.btn-sm {
+		padding: .4rem .4rem;
+		font-size: .7rem;
+		margin: 0px;
+	}
+}
+
+@media only screen and (max-width:1024px) {
+	/***Login***/
+	.login-page:after {
+		width: 350px;
+		height: 350px;
+		top: 100px;
+		z-index: -1;
+	}
+	.main-sidebar,
+	.main-sidebar::before {
+		box-shadow: none !important;
+		margin-right: -250px !important;
+	}
+	.content-wrapper,
+	.content-wrapper::before,
+	.main-footer,
+	.main-footer::before,
+	.main-header,
+	.main-header::before {
+		margin-right: 0 !important;
+	}
+	.sidebar-open .main-sidebar,
+	.sidebar-open .main-sidebar::before {
+		margin-right: 0 !important;
+	}
+	/********/
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 1.6rem;
+	}
+	.content-header h1 {
+		font-size: 1.6rem;
+	}
+	a,
+	p,
+	button,
+	span,
+	li,
+	strong,
+	b {
+		font-size: 0.9rem;
+		line-height: 1.5rem;
+	}
+	.info-box .progress-description,
+	.info-box .info-box-text {
+		font-size: 0.8rem;
+	}
+	.table td,
+	.table th {
+		vertical-align: middle;
+	}
+	table tbody tr td.project-actions {
+		align-items: center;
+		justify-content: space-between;
+	}
+	table tbody tr td.project-actions a.btn-sm {
+		padding: .4rem .4rem;
+		font-size: .7rem;
+		margin: 0px;
+	}
+}
+
+
+/* Medium devices (min-width:768px) (max-width: 991.98px) // (tablets, less than 992px) */
+
+@media only screen and (max-width:991px) {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 1.4rem;
+	}
+	.content-header h1 {
+		font-size: 1.4rem;
+	}
+	a,
+	p,
+	button,
+	span,
+	li,
+	strong,
+	b {
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+	}
+	.info-box .progress-description,
+	.info-box .info-box-text {
+		font-size: 0.7rem;
+	}
+	table tbody tr td.project-actions {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: center;
+	}
+	table tbody tr td.project-actions a.btn-sm {
+		margin: 4px 30px;
+	}
+	.content-wrapper .content-header ul.nav li {
+		width: 180px;
+		margin: 4px 0px;
+	}
+	.content-wrapper .content-header ul.nav li .dropdown button {
+		width: 100%;
+	}
+	div.dataTables_wrapper div.dataTables_filter {
+		text-align: right !important;
+	}
+}
+
+@media only screen and (max-width:768px) {
+	/***Login***/
+	.login-page:after {
+		width: 250px;
+		height: 250px;
+		top: 100px;
+		z-index: -1;
+	}
+	/*************/
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 1.3rem !important;
+	}
+	.content-header h1 {
+		font-size: 1.3rem;
+	}
+	.custom-file-label::after {
+		right: 70%;
+	}
+	.content-wrapper .content-header ul.nav {
+		margin: 8px 0px;
+	}
+	.content-wrapper .content-header ul.nav li {
+		width: 160px;
+		margin: 4px 0px;
+	}
+	.content-wrapper .content-header ul.nav li .dropdown button {
+		width: 100%;
+	}
+	div.dataTables_wrapper div.dataTables_filter,
+	div.dataTables_wrapper div.dataTables_length {
+		text-align: right !important;
+	}
+}
+
+
+/* Small devices (min-width: 576px) (max-width: 767.98px) // (landscape phones, less than 768px) */
+
+@media only screen and (max-width: 767.98px) {
+	/***Login***/
+	.login-page:after {
+		width: 250px;
+		height: 250px;
+		top: 100px;
+		z-index: -1;
+	}
+	.card-body {
+		overflow-x: auto;
+	}
+	.content-wrapper .content-header ul.nav {
+		margin: 8px 0px;
+	}
+	.content-wrapper .content-header ul.nav li {
+		width: 160px;
+		margin: 4px 0px;
+	}
+	.content-wrapper .content-header ul.nav li .dropdown button {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width:630px) {}
+
+
+/* Extra small devices (min-width:361px) (max-width: 575.98px) // (portrait phones, less than 576px) */
+
+@media only screen and (max-width: 575.98px) {
+	.form_datetime input.form-control {
+		max-width: 91%;
+	}
+	.content-wrapper .content-header ul.nav li {
+		width: 135px;
+		margin: 4px 0px;
+	}
+	.btn {
+		padding: .2rem .2rem;
+		font-size: 0.8rem;
+	}
+}
+
+
+/* (min-width:361px) (max-width:520px) */
+
+@media only screen and (max-width:520px) {}
+
+@media only screen and (max-width:414px) {}
+
+
+/* (min-width:321px) (max-width:360px) */
+
+@media only screen and (max-width:375px) {}
+
+@media only screen and (max-width:320px) {}

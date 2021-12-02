@@ -1,0 +1,54 @@
+$list-grid-transition-time: 0.2s;
+
+body {
+	padding: 20px;
+}
+
+.simple-list-grid {
+	-webkit-transition: all $list-grid-transition-time ease-in;
+	-moz-transition: all $list-grid-transition-time ease-in;
+	-o-transition: all $list-grid-transition-time ease-in;
+	transition: all $list-grid-transition-time ease-in;
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	ul {
+		list-style: none;
+		position: relative;
+		margin: 0;
+		padding: 0;
+
+		li {
+			padding: 1rem;
+			width: 100%;
+			opacity: 0; // gets set to 1 in the plugin animate function
+			border: 1px solid #ccc;
+
+			-webkit-transition: all $list-grid-transition-time ease-in;
+			-moz-transition: all $list-grid-transition-time ease-in;
+			-o-transition: all $list-grid-transition-time ease-in;
+			transition: all $list-grid-transition-time ease-in;
+
+			.thumb {
+				float: left;
+				margin-right: 1rem;
+				width: 150px;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+				}
+			}
+
+			&:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+		}
+	}
+}

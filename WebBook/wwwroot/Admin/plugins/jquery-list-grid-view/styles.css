@@ -1,0 +1,42 @@
+@import url("../jquery-list-grid-view/styles.scss");
+.simple-list-grid ul li:after, .simple-list-grid:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+body { padding: 20px }
+
+.simple-list-grid {
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in
+}
+
+.simple-list-grid ul {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0
+}
+
+.simple-list-grid ul li {
+  padding: 1rem;
+  width: 100%;
+  opacity: 0;
+  border: 1px solid #ccc;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in
+}
+
+.simple-list-grid ul li .thumb {
+  float: left;
+  margin-right: 1rem;
+  width: 150px;
+  overflow: hidden
+}
+
+.simple-list-grid ul li .thumb img { width: 100%; height:100px; margin:20px auto; }
