@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infarstuructre
+namespace Infarstuructre.ViewModel
 {
    public class ApplicationUser:IdentityUser
     {

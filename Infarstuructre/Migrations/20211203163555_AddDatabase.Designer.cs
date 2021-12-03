@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infarstuructre.Migrations
 {
     [DbContext(typeof(FreeBookDbContext))]
-    [Migration("20211202163129_AddDatabase")]
+    [Migration("20211203163555_AddDatabase")]
     partial class AddDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,15 +25,13 @@ namespace Infarstuructre.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("(newid())");
 
                     b.Property<string>("Author")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
-
-                    b.Property<Guid?>("CategSubCategoryIdoryId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uniqueidentifier");
@@ -63,9 +61,9 @@ namespace Infarstuructre.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategSubCategoryIdoryId");
-
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("SubCategoryId");
 
                     b.ToTable("Books");
                 });
@@ -74,7 +72,8 @@ namespace Infarstuructre.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("(newid())");
 
                     b.Property<int>("CurrentStaut")
                         .HasColumnType("int");
@@ -96,7 +95,8 @@ namespace Infarstuructre.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("(newid())");
 
                     b.Property<string>("Action")
                         .HasColumnType("nvarchar(max)");
@@ -121,7 +121,8 @@ namespace Infarstuructre.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("(newid())");
 
                     b.Property<string>("Action")
                         .HasColumnType("nvarchar(max)");
@@ -146,7 +147,8 @@ namespace Infarstuructre.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("(newid())");
 
                     b.Property<string>("Action")
                         .HasColumnType("nvarchar(max)");
@@ -171,7 +173,8 @@ namespace Infarstuructre.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("(newid())");
 
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uniqueidentifier");
@@ -191,7 +194,7 @@ namespace Infarstuructre.Migrations
                     b.ToTable("SubCategories");
                 });
 
-            modelBuilder.Entity("Infarstuructre.ApplicationUser", b =>
+            modelBuilder.Entity("Infarstuructre.ViewModel.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -398,13 +401,15 @@ namespace Infarstuructre.Migrations
 
             modelBuilder.Entity("Domin.Entity.Book", b =>
                 {
-                    b.HasOne("Domin.Entity.SubCategory", "SubCategory")
-                        .WithMany()
-                        .HasForeignKey("CategSubCategoryIdoryId");
-
                     b.HasOne("Domin.Entity.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domin.Entity.SubCategory", "SubCategory")
+                        .WithMany()
+                        .HasForeignKey("SubCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -468,7 +473,7 @@ namespace Infarstuructre.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Infarstuructre.ApplicationUser", null)
+                    b.HasOne("Infarstuructre.ViewModel.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -477,7 +482,7 @@ namespace Infarstuructre.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Infarstuructre.ApplicationUser", null)
+                    b.HasOne("Infarstuructre.ViewModel.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -492,7 +497,7 @@ namespace Infarstuructre.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Infarstuructre.ApplicationUser", null)
+                    b.HasOne("Infarstuructre.ViewModel.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -501,7 +506,7 @@ namespace Infarstuructre.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Infarstuructre.ApplicationUser", null)
+                    b.HasOne("Infarstuructre.ViewModel.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
