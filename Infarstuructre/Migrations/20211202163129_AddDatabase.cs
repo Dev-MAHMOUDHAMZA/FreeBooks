@@ -223,7 +223,6 @@ namespace Infarstuructre.Migrations
                     Publish = table.Column<bool>(type: "bit", nullable: false),
                     CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SubCategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CategSubCategoryIdoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CurrentStaut = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -236,8 +235,8 @@ namespace Infarstuructre.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Books_SubCategories_CategSubCategoryIdoryId",
-                        column: x => x.CategSubCategoryIdoryId,
+                        name: "FK_Books_SubCategories_SubCategoryId",
+                        column: x => x.SubCategoryId,
                         principalTable: "SubCategories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
