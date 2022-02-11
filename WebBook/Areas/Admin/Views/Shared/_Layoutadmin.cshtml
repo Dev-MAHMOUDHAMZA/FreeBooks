@@ -9,7 +9,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="~/Admin/plugins/fontawesome-free/css/all.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="~/Admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="~/Admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
@@ -34,7 +34,9 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="~/Admin/plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="~/Admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
     <!-- Sweet Aler -->
+    @*<link rel="stylesheet" href="~/Admin/plugins/sweetalert2/sweetalert2.min.css">*@
     <link rel="stylesheet" href="~/Admin/plugins/sweetalert2/sweetalert2.min.css">
     <!-- Custom style for RTL -->
     <link rel="stylesheet" href="~/Admin/dist/css/custom.css">
@@ -191,7 +193,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
+                         with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -627,9 +629,17 @@
             </div>
             <!-- /.sidebar -->
         </aside>
-         <div class="container-fluid">
-             @RenderBody()
-         </div>
+        <!--Body -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <!--End Body-->
         <footer class="main-footer">
             <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
             All rights reserved.
@@ -654,7 +664,8 @@
         $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 rtl -->
-    <script src="~/Admin/plugins/bootstrap/js/bootstrap-rtl.min.js"></script>
+    <script src="https://cdn.rtlcss.com/bootstrap/v4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Bootstrap 4 -->
     <script src="~/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
@@ -672,18 +683,19 @@
     <!-- overlayScrollbars -->
     <script src="~/Admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- DataTables  & Plugins -->
-    <script src=" ~/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src=" ~/Admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src=" ~/Admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src=" ~/Admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <script src=" ~/Admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src=" ~/Admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-    <script src=" ~/Admin/plugins/jszip/jszip.min.js"></script>
-    <script src=" ~/Admin/plugins/pdfmake/pdfmake.min.js"></script>
-    <script src=" ~/Admin/plugins/pdfmake/vfs_fonts.js"></script>
-    <script src=" ~/Admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-    <script src=" ~/Admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-    <script src=" ~/Admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <script src="~/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/Admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/Admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/Admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/Admin/plugins/jszip/jszip.min.js"></script>
+    <script src="~/Admin/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="~/Admin/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="~/Admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/Admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/Admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
     <!-- RoundSlider -->
     <!-- daterangepicker -->
     <script src="~/Admin/plugins/moment/moment.min.js"></script>
@@ -697,17 +709,20 @@
     <!-- bs-custom-file-input -->
     <script src="~/Admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <!-- Sweetalert -->
-    <script src="~/Admin/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    @*<script src="~/Admin/plugins/sweetalert2/sweetalert2.all.min.js"></script>*@
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
     <!-- filter -->
-    <script src="~/Admin/plugins/isotope/isotope.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/~/Admin/dist/polyfill.js"></script>
+    @*<script src="~/Admin/plugins/isotope/isotope.pkgd.min.js"></script>*@
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- AdminLTE App -->
     <script src="~/Admin/dist/js/adminlte.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/Admin/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="~/Admin/dist/js/pages/dashboard.js"></script>
-    @await RenderSectionAsync("Script",required:false);
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false);
 </body>
 </html>

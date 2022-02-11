@@ -29,9 +29,29 @@ namespace WebBook
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+            services.AddSession();
             services.AddDbContext<FreeBookDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("BookConnection")));
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<FreeBookDbContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredUniqueChars = 0;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireNonAlphanumeric = false;
+            }).AddEntityFrameworkStores<FreeBookDbContext>();
+
+            //services.Configure<IdentityOptions>(options =>
+            //{
+            //    options.Password.RequireDigit = false;  
+            //    options.Password.RequireLowercase = false;  
+            //    options.Password.RequireUppercase = false;
+            //    options.Password.RequiredUniqueChars = 0;
+            //    options.Password.RequiredLength = 5;
+            //    options.Password.RequireNonAlphanumeric = false;
+            //});
 
         }
 
@@ -52,7 +72,7 @@ namespace WebBook
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
