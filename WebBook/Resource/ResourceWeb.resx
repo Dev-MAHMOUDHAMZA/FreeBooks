@@ -156,6 +156,9 @@
   <data name="lbManageBook" xml:space="preserve">
     <value>ادارة الكتب</value>
   </data>
+  <data name="lbMsgErrorLogin" xml:space="preserve">
+    <value>البريد الالكترونى او كلمة المرور غير صحيح</value>
+  </data>
   <data name="lbMsgNotSavedChangePassword" xml:space="preserve">
     <value>لم يتم تغير كلمة المرور</value>
   </data>

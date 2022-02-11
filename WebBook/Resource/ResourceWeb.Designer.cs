@@ -178,6 +178,15 @@ namespace WebBook.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to البريد الالكترونى او كلمة المرور غير صحيح.
+        /// </summary>
+        public static string lbMsgErrorLogin {
+            get {
+                return ResourceManager.GetString("lbMsgErrorLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to لم يتم تغير كلمة المرور.
         /// </summary>
         public static string lbMsgNotSavedChangePassword {

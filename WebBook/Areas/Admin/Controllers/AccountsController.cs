@@ -17,13 +17,15 @@ namespace WebBook.Areas.Admin.Controllers
     {
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly FreeBookDbContext _context;
 
         public AccountsController(RoleManager<IdentityRole> roleManager,
-            UserManager<ApplicationUser> userManager,FreeBookDbContext context)
+            UserManager<ApplicationUser> userManager,SignInManager<ApplicationUser> signInManager ,FreeBookDbContext context)
         {
             _roleManager = roleManager;
             _userManager = userManager;
+            _signInManager = signInManager;
             _context = context;
         }
 
@@ -257,11 +259,28 @@ namespace WebBook.Areas.Admin.Controllers
             return RedirectToAction(nameof(Registers));
 
         }
+
         public IActionResult Login()
         {
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login (LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var Result = await _signInManager.PasswordSignInAsync(model.Eamil,
+                    model.Password,model.RememberMy,false);
+                if (Result.Succeeded)
+                    return RedirectToAction("Index", "Home");
+                else
+                    ViewBag.ErrorLogin = false;
+
+            }
+            return View(model);
+        }
 
     }
 }
