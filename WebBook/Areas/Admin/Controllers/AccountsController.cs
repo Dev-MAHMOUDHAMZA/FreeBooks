@@ -139,6 +139,7 @@ namespace WebBook.Areas.Admin.Controllers
                     UserName = model.NewRegister.Email,
                     Email = model.NewRegister.Email,
                     ActiveUser = model.NewRegister.ActiveUser,
+                    ImageUser = model.NewRegister.ImageUser
                 };
                 if(user.Id == null)
                 {
