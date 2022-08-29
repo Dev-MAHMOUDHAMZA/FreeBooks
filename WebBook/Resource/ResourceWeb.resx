@@ -120,6 +120,9 @@
   <data name="lbActiveUser" xml:space="preserve">
     <value>تفعيل المستخدم</value>
   </data>
+  <data name="lbAddNewRole" xml:space="preserve">
+    <value>اضف مجموعة جديدة</value>
+  </data>
   <data name="lbbtnChangePassword" xml:space="preserve">
     <value>تغير كلمة المرور</value>
   </data>
@@ -138,8 +141,17 @@
   <data name="lbbtnSaveNewUser" xml:space="preserve">
     <value>اضافة مستخدم جديد</value>
   </data>
+  <data name="lbcancelButtonText" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
   <data name="lbComparePassword" xml:space="preserve">
     <value>اعد كلمة المرور</value>
+  </data>
+  <data name="lbconfirmButtonText" xml:space="preserve">
+    <value>نعم ، احذفها</value>
+  </data>
+  <data name="lbEdit" xml:space="preserve">
+    <value>تعديل</value>
   </data>
   <data name="lbEmailUser" xml:space="preserve">
     <value>البريد الالكترونى</value>
@@ -155,6 +167,12 @@
   </data>
   <data name="lbManageBook" xml:space="preserve">
     <value>ادارة الكتب</value>
+  </data>
+  <data name="lbMsgDeletedOkRegister" xml:space="preserve">
+    <value>تم حذف مجموعة المستخدم.</value>
+  </data>
+  <data name="lbMsgDeletedOkRole" xml:space="preserve">
+    <value>تم حذف مجموعة المستخدم.</value>
   </data>
   <data name="lbMsgErrorLogin" xml:space="preserve">
     <value>البريد الالكترونى او كلمة المرور غير صحيح</value>
@@ -195,8 +213,17 @@
   <data name="lbNotUpdateMsgUserRole" xml:space="preserve">
     <value>لم يتم تعديل مجموعة المستخدم</value>
   </data>
+  <data name="lbOk" xml:space="preserve">
+    <value>حسناً</value>
+  </data>
   <data name="lbPassword" xml:space="preserve">
     <value>كلمة المرور</value>
+  </data>
+  <data name="lbRegisters" xml:space="preserve">
+    <value>المستخدمين</value>
+  </data>
+  <data name="lbRoles" xml:space="preserve">
+    <value>مجموعة المستخدمين</value>
   </data>
   <data name="lbRoleUser" xml:space="preserve">
     <value>مجموعة المستخدمين</value>
@@ -212,6 +239,18 @@
   </data>
   <data name="lbSelectUserRole" xml:space="preserve">
     <value>اختر مجموعة المستخدم</value>
+  </data>
+  <data name="lbTextMsgDelete" xml:space="preserve">
+    <value>لن تتمكن من التراجع عن هذا!!</value>
+  </data>
+  <data name="lbTitleDeletedOk" xml:space="preserve">
+    <value>تم الحذف!</value>
+  </data>
+  <data name="lbTitleEdit" xml:space="preserve">
+    <value>تعديل مجموعة المستخدم</value>
+  </data>
+  <data name="lbTitleMsgDelete" xml:space="preserve">
+    <value>هل انتا متأكد ؟</value>
   </data>
   <data name="lbUpdate" xml:space="preserve">
     <value>تم التعديل</value>

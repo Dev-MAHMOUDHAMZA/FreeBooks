@@ -199,16 +199,16 @@
     </div>
 
     @section Scripts{
-        @if (!string.IsNullOrEmpty(Context.Session.GetString("msgType")))
+        @if (!string.IsNullOrEmpty(Context.Session.GetString(Helper.MsgType)))
         {
-            if (Context.Session.GetString("msgType") == "success")
+        if (Context.Session.GetString(Helper.MsgType) == Helper.Success)
             {
                 <script>
 
             Swal.fire({
-                title: '@Context.Session.GetString("title")',
-                text: '@Html.Raw(@Context.Session.GetString("msg"))',
-                confirmButtonText: 'حسناً',
+                title: '@Context.Session.GetString(Helper.Title)',
+                    text: '@Html.Raw(@Context.Session.GetString(Helper.Msg))',
+                    confirmButtonText: '@ResourceWeb.lbOk',
                 icon: 'success'
             });
                 </script>
@@ -219,17 +219,36 @@
                 <script>
 
              Swal.fire({
-                 title: '@Context.Session.GetString("title")',
-                 text: '@Html.Raw(@Context.Session.GetString("msg"))',
-                 confirmButtonText: 'حسناً',
+                    title: '@Context.Session.GetString(Helper.Title)',
+                    text: '@Html.Raw(@Context.Session.GetString(Helper.Msg))',
+                    confirmButtonText: '@ResourceWeb.lbOk',
                  icon: 'error'
              });
                 </script>
             }
-            Context.Session.SetString("msgType", "");
+            Context.Session.SetString(Helper.MsgType, "");
         }
 
         <script src="~/Modules/Registers.js"></script>
+
+    <script>
+
+        let lbTitleEdit = '@Html.Raw(ResourceWeb.lbTitleEdit)';
+        let lbEdit = '@Html.Raw(ResourceWeb.lbEdit)';
+        let lbAddNewRole = '@Html.Raw(ResourceWeb.lbAddNewRole)';
+        let lbbtnSave = '@Html.Raw(ResourceWeb.lbbtnSave)';
+
+        let lbTitleMsgDelete = '@Html.Raw(ResourceWeb.lbbtnSave)';
+        let lbTextMsgDelete = '@Html.Raw(ResourceWeb.lbTextMsgDelete)';
+        let lbconfirmButtonText = '@Html.Raw(ResourceWeb.lbconfirmButtonText)';
+        let lbcancelButtonText = '@Html.Raw(ResourceWeb.lbcancelButtonText)';
+
+        let lbTitleDeletedOk = '@Html.Raw(ResourceWeb.lbTitleDeletedOk)';
+        let lbMsgDeletedOkRegister = '@Html.Raw(ResourceWeb.lbMsgDeletedOkRegister)';
+        let lbSuccess = '@Html.Raw(Helper.Success)';
+        let PathImageuser = '@Html.Raw(Helper.PathImageuser)';
+
+    </script>
     }
 
 

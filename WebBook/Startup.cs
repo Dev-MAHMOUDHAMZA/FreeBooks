@@ -43,6 +43,13 @@ namespace WebBook
                 options.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<FreeBookDbContext>();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Admin";
+            });
+
+
+
             //services.Configure<IdentityOptions>(options =>
             //{
             //    options.Password.RequireDigit = false;  
@@ -73,7 +80,9 @@ namespace WebBook
 
             app.UseRouting();
             app.UseSession();
-            app.UseAuthorization();
+
+            app.UseAuthentication();    
+            app.UseAuthorization();   
 
             app.UseEndpoints(endpoints =>
             {
