@@ -115,16 +115,16 @@
     </div>
 
     @section Scripts{
-        @if (!string.IsNullOrEmpty(Context.Session.GetString("msgType")))
+        @if (!string.IsNullOrEmpty(Context.Session.GetString(Helper.MsgType)))
         {
-            if (Context.Session.GetString("msgType") == "success")
+        if (Context.Session.GetString(Helper.MsgType) == Helper.Success)
             {
                 <script>
 
             Swal.fire({
-                title: '@Context.Session.GetString("title")',
-                text: '@Html.Raw(@Context.Session.GetString("msg"))',
-                confirmButtonText: 'حسناً',
+                    title: '@Context.Session.GetString(Helper.Title)',
+                    text: '@Html.Raw(@Context.Session.GetString(Helper.Msg))',
+                    confirmButtonText: '@ResourceWeb.lbOk',
                 icon: 'success'
             });
                 </script>
@@ -135,14 +135,14 @@
                 <script>
 
              Swal.fire({
-                 title: '@Context.Session.GetString("title")',
-                 text: '@Html.Raw(@Context.Session.GetString("msg"))',
-                 confirmButtonText: 'حسناً',
+                    title: '@Context.Session.GetString(Helper.Title)',
+                    text: '@Html.Raw(@Context.Session.GetString(Helper.Msg))',
+                    confirmButtonText: '@ResourceWeb.lbOk',
                  icon: 'error'
              });
                 </script>
             }
-            Context.Session.SetString("msgType", "");
+        Context.Session.SetString(Helper.MsgType, "");
         }
 
         <script src="~/Modules/Roles.js"></script>

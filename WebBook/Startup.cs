@@ -1,3 +1,4 @@
+using Domin.Entity;
 using Infarstuructre;
 using Infarstuructre.Data;
 using Infarstuructre.ViewModel;
@@ -46,8 +47,8 @@ namespace WebBook
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Admin";
+                options.AccessDeniedPath = "/Admin/Home/Denied";
             });
-
 
 
             //services.Configure<IdentityOptions>(options =>

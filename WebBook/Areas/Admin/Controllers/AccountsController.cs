@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,11 +16,14 @@ namespace WebBook.Areas.Admin.Controllers
     [Authorize]
     public class AccountsController : Controller
     {
+        #region Declaration
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly FreeBookDbContext _context;
+        #endregion
 
+        #region Constructor
         public AccountsController(RoleManager<IdentityRole> roleManager,
             UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, FreeBookDbContext context)
         {
@@ -30,6 +32,9 @@ namespace WebBook.Areas.Admin.Controllers
             _signInManager = signInManager;
             _context = context;
         }
+        #endregion
+
+        #region Method
         [Authorize(Roles = "Admin,User")]
         public IActionResult Roles()
         {
@@ -211,6 +216,7 @@ namespace WebBook.Areas.Admin.Controllers
             return RedirectToAction(nameof(Registers));
 
         }
+
         [AllowAnonymous]
         public IActionResult Login()
         {
@@ -243,14 +249,12 @@ namespace WebBook.Areas.Admin.Controllers
             return RedirectToAction(nameof(Login));
         }
 
-
-
         private void SessionMsg(string MsgType, string Title, string Msg)
         {
             HttpContext.Session.SetString(Helper.MsgType, MsgType);
             HttpContext.Session.SetString(Helper.Title, Title);
             HttpContext.Session.SetString(Helper.Msg, Msg);
         }
-
+        #endregion
     }
 }

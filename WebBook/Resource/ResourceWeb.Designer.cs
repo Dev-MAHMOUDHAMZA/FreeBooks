@@ -232,6 +232,15 @@ namespace WebBook.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ليس لديك صلاحية لهذه الصفحة.
+        /// </summary>
+        public static string lbMsgDenied {
+            get {
+                return ResourceManager.GetString("lbMsgDenied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to البريد الالكترونى او كلمة المرور غير صحيح.
         /// </summary>
         public static string lbMsgErrorLogin {

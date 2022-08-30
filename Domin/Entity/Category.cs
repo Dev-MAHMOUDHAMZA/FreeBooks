@@ -16,6 +16,6 @@ namespace Domin.Entity
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public int CurrentStaut { get; set; }
+        public int CurrentState { get; set; }
     }
 }

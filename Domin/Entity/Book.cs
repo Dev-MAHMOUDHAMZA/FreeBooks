@@ -35,7 +35,7 @@ namespace Domin.Entity
         [ForeignKey("SubCategoryId")]
         public SubCategory SubCategory { get; set; }
 
-        public int CurrentStaut { get; set; }
+        public int CurrentState { get; set; }
 
     }
 }

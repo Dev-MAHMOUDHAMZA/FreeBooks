@@ -20,6 +20,6 @@ namespace Domin.Entity
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
 
-        public int CurrentStaut { get; set; }
+        public int CurrentState { get; set; }
     }
 }
