@@ -19,5 +19,15 @@ namespace Domin.Entity
         public const string Title = "title";
         public const string Msg = "msg";
 
+        public const string Save = "Save";
+        public const string Update = "Update";
+        public const string Delete = "Delete";
+
+        public enum eCurrentState
+        {
+            Active = 1,
+            Delete =0
+        }
+
     }
 }

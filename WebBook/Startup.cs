@@ -1,6 +1,8 @@
 using Domin.Entity;
 using Infarstuructre;
 using Infarstuructre.Data;
+using Infarstuructre.IRepository;
+using Infarstuructre.IRepository.ServicesRepository;
 using Infarstuructre.ViewModel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,6 +51,14 @@ namespace WebBook
                 options.LoginPath = "/Admin";
                 options.AccessDeniedPath = "/Admin/Home/Denied";
             });
+
+            //
+
+            services.AddScoped<IServicesRepository<Category>, ServicesCategory>();
+            services.AddScoped<IServicesRepositoryLog<LogCategory>, ServicesLogCategory>();
+
+
+
 
 
             //services.Configure<IdentityOptions>(options =>
