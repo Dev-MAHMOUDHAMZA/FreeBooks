@@ -12,7 +12,7 @@ namespace Infarstuructre.IRepository
 
         T FindBy(Guid Id);
 
-        bool Save(T model,Guid UserId);
+        bool Save(T model);
 
         bool Delete(Guid Id);
     }

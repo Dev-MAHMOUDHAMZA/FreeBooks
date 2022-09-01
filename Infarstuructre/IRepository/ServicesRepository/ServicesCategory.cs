@@ -56,7 +56,7 @@ namespace Infarstuructre.IRepository.ServicesRepository
             }
         }
 
-        public bool Save(Category model, Guid UserId)
+        public bool Save(Category model)
         {
             try
             {
