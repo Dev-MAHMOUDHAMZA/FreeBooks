@@ -3,6 +3,7 @@ using Infarstuructre.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,7 +37,19 @@ namespace Infarstuructre.IRepository.ServicesRepository
         {
             try
             {
-                return _context.Categories.FirstOrDefault(x=>x.Id.Equals(Id));
+                return _context.Categories.FirstOrDefault(x=>x.Id.Equals(Id) && x.CurrentState > 0);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public Category FindBy(string Name)
+        {
+            try
+            {
+                return _context.Categories.FirstOrDefault(x=>x.Name.Contains(Name.Trim()) && x.CurrentState > 0);
             }
             catch (Exception)
             {
@@ -48,7 +61,7 @@ namespace Infarstuructre.IRepository.ServicesRepository
         {
             try
             {
-                return _context.Categories.OrderBy(x => x.Name).ToList();
+                return _context.Categories.OrderBy(x => x.Name).Where(x=>x.CurrentState > 0).ToList();
             }
             catch (Exception)
             {

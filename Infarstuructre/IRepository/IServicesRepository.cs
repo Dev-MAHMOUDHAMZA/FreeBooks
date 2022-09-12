@@ -12,6 +12,8 @@ namespace Infarstuructre.IRepository
 
         T FindBy(Guid Id);
 
+        T FindBy(string Name);
+
         bool Save(T model);
 
         bool Delete(Guid Id);

@@ -1,5 +1,6 @@
 ﻿using Domin.Entity;
 using Infarstuructre.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,7 +62,7 @@ namespace Infarstuructre.IRepository.ServicesRepository
         {
             try
             {
-                return _context.LogCategories.FirstOrDefault(x => x.Id.Equals(Id));
+                return _context.LogCategories.Include(x=>x.Category).FirstOrDefault(x => x.Id.Equals(Id));
             }
             catch(Exception)
             {
@@ -73,7 +74,7 @@ namespace Infarstuructre.IRepository.ServicesRepository
         {
             try
             {
-                return _context.LogCategories.OrderByDescending(x => x.Date).ToList();
+                return _context.LogCategories.Include(x => x.Category).OrderByDescending(x => x.Date).ToList();
             }
             catch (Exception)
             {
