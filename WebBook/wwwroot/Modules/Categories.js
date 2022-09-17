@@ -44,20 +44,14 @@ function DeleteLog(id) {
         cancelButtonText: lbcancelButtonText
     }).then((result) => {
         if (result.isConfirmed) {
-            $.ajax({
-                url: `/Admin/Categories/DeleteLog?Id=${id}`,
-                method: 'GET',
-                cach: false,
-                success: () => {
-                    Swal.fire(
-                        lbTitleDeletedOk,
-                        lbMsgDeletedOkCategory,
-                        lbSuccess
-                    )
-                }
-            });
-   
+            window.location.href = `/Admin/Categories/DeleteLog?Id=${id}`;
+            Swal.fire(
+                lbTitleDeletedOk,
+                lbMsgDeletedOkCategory,
+                lbSuccess
+            )
         }
+        
     })
 }
 
@@ -75,12 +69,12 @@ Rest = () => {
     document.getElementById("btnSave").value = lbbtnSave;
     //document.getElementById("categoryId").value = "";
     document.getElementById("categoryName").value = "";
-    document.getElementById("description").value = "";  
+    document.getElementById("description").value = "";
 }
 
 
-
 document.getElementById("defaultOpen").click();
+
 
 function openCity(evt, cityName) {
     // Declare all variables

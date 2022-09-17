@@ -49,7 +49,7 @@ namespace Infarstuructre.IRepository.ServicesRepository
         {
             try
             {
-                return _context.Categories.FirstOrDefault(x=>x.Name.Contains(Name.Trim()) && x.CurrentState > 0);
+                return _context.Categories.FirstOrDefault(x=>x.Name.Equals(Name.Trim()) && x.CurrentState > 0);
             }
             catch (Exception)
             {

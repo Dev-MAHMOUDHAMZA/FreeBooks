@@ -44,8 +44,8 @@ namespace WebBook.Areas.Admin.Controllers
         public IActionResult DeleteLog(Guid Id)
         {
             if (_servicesCategoryLog.DeleteLog(Id))
-                return Json("success");
-            return BadRequest();
+                return RedirectToAction(nameof(Categories));
+            return RedirectToAction(nameof(Categories));
         }
        
         [HttpPost]
