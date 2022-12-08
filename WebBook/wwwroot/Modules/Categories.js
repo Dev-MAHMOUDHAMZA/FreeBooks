@@ -1,7 +1,8 @@
 ﻿$(document).ready(function () {
     $('#tableCategory').DataTable({
         "autoWidth": false,
-        "responsive":true
+        "responsive": true,
+        //"searching":false
     });
     $('#tableLogCategory').DataTable({
         "autoWidth": false,

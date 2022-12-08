@@ -124,6 +124,15 @@ namespace WebBook.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to الصلحيات.
+        /// </summary>
+        public static string lbbtnPermissions {
+            get {
+                return ResourceManager.GetString("lbbtnPermissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to حفظ.
         /// </summary>
         public static string lbbtnSave {
@@ -273,6 +282,15 @@ namespace WebBook.Resource {
         public static string lbManageBook {
             get {
                 return ResourceManager.GetString("lbManageBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to إدارة الصلحيات لل.
+        /// </summary>
+        public static string lbManagePermission {
+            get {
+                return ResourceManager.GetString("lbManagePermission", resourceCulture);
             }
         }
         

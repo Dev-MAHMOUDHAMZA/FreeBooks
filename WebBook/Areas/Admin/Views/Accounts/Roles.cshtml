@@ -52,7 +52,7 @@
                                             <td>
                                                 @switch (@item.Name)
                                                 {
-                                                    case "SupperAdmin":
+                                                    case "SuperAdmin":
                                                         <span class="badge badge-danger" style="width:250px; height:25px">@item.Name</span>
                                                         break;
                                                     case "Admin":
@@ -65,7 +65,8 @@
                                             </td>
                                             <td>
                                                 <input type="button" class="btn btn-info btn-sm" onclick="Edit('@item.Id', '@item.Name')" value="@ResourceWeb.lbbtnEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" />|
-                                                <input type="button" class="btn btn-danger btn-sm" onclick="Delete('@item.Id')" value="@ResourceWeb.lbbtnDelete" />
+                                            <input type="button" class="btn btn-danger btn-sm" onclick="Delete('@item.Id')" value="@ResourceWeb.lbbtnDelete" />
+                                            <a class="btn btn-success btn-sm" asp-action="Index" asp-controller="Permissions" asp-route-RoleId="@item.Id">@ResourceWeb.lbbtnPermissions</a>
                                             </td>
                                         </tr>
                                     }

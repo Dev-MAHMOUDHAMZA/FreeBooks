@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31911.196
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBook", "WebBook\WebBook.csproj", "{6279EB4F-B40B-4D51-94B9-C0ABB4BA5B6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebBook", "WebBook\WebBook.csproj", "{6279EB4F-B40B-4D51-94B9-C0ABB4BA5B6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domin", "Domin\Domin.csproj", "{EFB156F2-B35E-42B1-9A7E-14DDC7AE85B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domin", "Domin\Domin.csproj", "{EFB156F2-B35E-42B1-9A7E-14DDC7AE85B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infarstuructre", "Infarstuructre\Infarstuructre.csproj", "{E77A5165-AB32-47AC-8503-37F9D081D5A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infarstuructre", "Infarstuructre\Infarstuructre.csproj", "{E77A5165-AB32-47AC-8503-37F9D081D5A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

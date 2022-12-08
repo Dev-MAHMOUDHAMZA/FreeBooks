@@ -51,16 +51,17 @@ namespace WebBook.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var role = new IdentityRole
-                {
-                    Id = model.NewRole.RoleId,
-                    Name = model.NewRole.RoleName
-                };
+                //var role = new IdentityRole
+                //{
+                //    Id = model.NewRole.RoleId,
+                //    Name = model.NewRole.RoleName
+                //};
                 // Create
-                if (role.Id == null)
+                if (model.NewRole.RoleId == null)
                 {
-                    role.Id = Guid.NewGuid().ToString();
-                    var result = await _roleManager.CreateAsync(role);
+                    //role.Id = Guid.NewGuid().ToString();
+                    var result = await _roleManager.CreateAsync(new IdentityRole(model.NewRole.RoleName));
+
                     if (result.Succeeded)// Succeeded 
                         SessionMsg(Helper.Success, Resource.ResourceWeb.lbSave, Resource.ResourceWeb.lbSaveMsgRole);
                     else // Not Successeded
@@ -68,7 +69,7 @@ namespace WebBook.Areas.Admin.Controllers
                 }//Update
                 else
                 {
-                    var RoleUpdate = await _roleManager.FindByIdAsync(role.Id);
+                    var RoleUpdate = await _roleManager.FindByIdAsync(model.NewRole.RoleId);
                     RoleUpdate.Id = model.NewRole.RoleId;
                     RoleUpdate.Name = model.NewRole.RoleName;
                     var Result = await _roleManager.UpdateAsync(RoleUpdate);
